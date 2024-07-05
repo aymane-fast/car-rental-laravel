@@ -1,1 +1,10 @@
-<H1>i will add a header here and commit to look cool</H1>
+
+<h1>welcome to rent a car !</h1>
+
+<h2>
+    <a>become a clinet ?</a>
+    <a>already client , login </a>
+</h2>
+
+
+<h2>car list :</h2>
