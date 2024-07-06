@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -37,7 +39,7 @@ class UserController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']); // Hash the password
 
         $user = User::create($validatedData);
-        return redirect()->route('users.index');
+        return redirect()->route('users.login');
     }
 
     public function login()
