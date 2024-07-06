@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string("seats");
             $table->string("description");
             $table->string("image");
-            $table->boolean("is_active")->default(true);
+            $table->boolean("booked")->default(false);
         });
     }
 

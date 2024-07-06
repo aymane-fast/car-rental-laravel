@@ -2,8 +2,8 @@
 <h1>welcome to rent a car !</h1>
 
 <h2>
-    <a>become a clinet ?</a>
-    <a>already client , login </a>
+    <a href="/register"> become a clinet ?</a>
+    <a href="/login">already client , login </a>
 </h2>
 
 
