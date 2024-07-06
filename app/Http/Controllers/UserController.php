@@ -54,8 +54,9 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->route('dashboard');
         }
+        dd($credentials);
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
