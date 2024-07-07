@@ -61,4 +61,12 @@ class UserController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    public function dashboard()
+    {
+        $user = Auth::user();
+        $activeCars = $user->cars()->wherePivot('status', 'active')->get();
+        $pastCars = $user->cars()->wherePivot('status', 'past')->get();
+    
+        return view('users.dashboard', compact('user','activeCars', 'pastCars'));
+    }
 }

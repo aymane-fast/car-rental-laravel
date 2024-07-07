@@ -27,4 +27,13 @@ class Car extends Model
         'booked'
     ];
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps()
+                    ->withPivot('start_date', 'end_date', 'total_price', 'status')
+                    ->withTimestamps();
+    }
+
+
+
 }

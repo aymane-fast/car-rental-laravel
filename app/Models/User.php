@@ -21,4 +21,12 @@ class User extends Authenticatable
         'postal_code',
         'image',
     ];
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class, 'bookings')
+                    ->withPivot('start_date', 'end_date', 'total_price', 'status')
+                    ->withTimestamps();
+    }
+    
+
 }

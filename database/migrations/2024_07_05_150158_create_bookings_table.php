@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->integer('total_price');
-            $table->string('status')->default('Pending');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

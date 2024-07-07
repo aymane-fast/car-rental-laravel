@@ -12,6 +12,4 @@ Route::get('/register',[UserController::class , 'register'])->name('users.regist
 Route::post('/register',[UserController::class , 'store'])->name('users.store');
 Route::get('/login',[UserController::class , 'login'])->name('users.login');
 Route::post('/login',[UserController::class , 'authenticate'])->name('users.authenticate');
-Route::get('/dashboard', function () {
-    return view('users.dashboard');
-})->name('dashboard');
+Route::get('/dashboard',[UserController::class , 'dashboard'])->name('dashboard');
