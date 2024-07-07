@@ -13,19 +13,19 @@
 
 #### 1. User Management
 - **User Registration**
-  - Task: Create a registration form for new users.
-  - Task: Implement user validation (email, password strength, etc.).
-  - Task: Store user details in the database.
+  - Task: Create a registration form for new users. done
+  - Task: Implement user validation (email, password strength, etc.). not done 
+  - Task: Store user details in the database. done
 
 - **User Login**
-  - Task: Create a login form.
-  - Task: Implement authentication logic.
-  - Task: Secure routes that require authentication.
+  - Task: Create a login form.done
+  - Task: Implement authentication logic. done
+  - Task: Secure routes that require authentication. not done 
 
 - **User Profile**
-  - Task: Create a user profile page.
-  - Task: Allow users to update their details (name, email, password).
-  - Task: Implement password reset functionality.
+  - Task: Create a user profile page. done
+  - Task: Allow users to update their details (name, email, password). not done 
+  - Task: Implement password reset functionality. not done 
 
 #### 2. Car Management
 - **Car CRUD (Create, Read, Update, Delete)**

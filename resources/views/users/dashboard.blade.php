@@ -13,6 +13,9 @@
 <p>postal code : {{$user->postal_code}}</p>
 <p>image : <img src="{{asset('storage/'.$user->image)}}" alt="user image"></p>
 
+<button><a href="{{route('users.resetPassForm')}}">reset password</a></button>
+<button><a href="{{route('users.logout')}}">logout</a></button>
+
 <h2>active rented car list :</h2>
 @if($activeCars->isEmpty())
     <p>You have no active rented cars.</p>

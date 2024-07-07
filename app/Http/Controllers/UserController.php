@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -68,5 +69,30 @@ class UserController extends Controller
         $pastCars = $user->cars()->wherePivot('status', 'past')->get();
     
         return view('users.dashboard', compact('user','activeCars', 'pastCars'));
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('users.login');
+    }
+    public function resetPassword(Request $request){
+
+        $user = Auth::user();
+        $validatedData = $request->validate([
+            'password' => 'required',
+            'old_password'=> 'required',
+        ]);
+
+        if(Hash::check($validatedData['old_password'], $user->password)){
+            $validatedData['password'] = bcrypt($validatedData['password']); // Hash the password
+            $user->update(['password'=>$validatedData['password']]);
+            return redirect()->route('dashboard');
+        }
+        return back()->withError('The provided credentials do not match our records');
+            
+    }
+    public function resetPasswordForm()
+    {
+        return view('users.resetPassword');
     }
 }
