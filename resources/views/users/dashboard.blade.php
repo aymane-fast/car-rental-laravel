@@ -15,10 +15,8 @@
 
 <h2>active rented car list :</h2>
 @if($user->cars->isEmpty())
-<p>you have no active rented cars</p>
-@else(
-    )
-
+    <p>you have no active rented cars</p>
+@else
     @foreach($user->cars as $car)
     <p>car name : {{$car->name}}</p>
     <p>car brand : {{$car->brand}}</p>
@@ -27,7 +25,7 @@
     <p>car price : {{$car->price}}</p>
     <p>car image : <img src="{{asset('storage/'.$car->image)}}" alt="car image"></p>
     @endforeach
-    
+@endif
 <h2>rented car history :</h2>
 {{-- @foreach($user->rents as $rent)
 <p>car name : {{$rent->car->name}}</p>
