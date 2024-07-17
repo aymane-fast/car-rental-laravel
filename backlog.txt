@@ -18,14 +18,14 @@
   - Task: Store user details in the database. done
 
 - **User Login**
-  - Task: Create a login form.done
+  - Task: Create a login form. done
   - Task: Implement authentication logic. done
-  - Task: Secure routes that require authentication. not done 
+  - Task: Secure routes that require authentication.  not done 
 
 - **User Profile**
   - Task: Create a user profile page. done
   - Task: Allow users to update their details (name, email, password). not done 
-  - Task: Implement password reset functionality. not done 
+  - Task: Implement password reset functionality.  done 
 
 #### 2. Car Management
 - **Car CRUD (Create, Read, Update, Delete)**

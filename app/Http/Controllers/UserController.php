@@ -29,11 +29,11 @@ class UserController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required',
+            'password' => 'required|min:8',
             'phone' => 'required',
             'address' => 'required',
             'city' => 'required',
-            'postal_code' => 'required',
+            'postal_code' => 'required|int',
             'image' => 'required',
         ]);
 
