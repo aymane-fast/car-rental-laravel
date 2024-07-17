@@ -15,6 +15,7 @@
 
 <button><a href="{{route('users.resetPassForm')}}">reset password</a></button>
 <button><a href="{{route('users.logout')}}">logout</a></button>
+<button><a href="{{route('users.updateInfoForm')}}">update informations</a></button>
 
 <h2>active rented car list :</h2>
 @if($activeCars->isEmpty())

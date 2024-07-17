@@ -57,7 +57,6 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect()->route('dashboard');
         }
-        dd($credentials);
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
@@ -75,6 +74,7 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('users.login');
     }
+
     public function resetPassword(Request $request){
 
         $user = Auth::user();
@@ -94,5 +94,27 @@ class UserController extends Controller
     public function resetPasswordForm()
     {
         return view('users.resetPassword');
+    }
+    public function updateInfo(Request $request)
+    {
+        $user = Auth::user();
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'postal_code' => 'required|int',
+            'image' => 'required',
+        ]);
+        $validatedData['email'] = $user['email'];
+
+        $user->update($validatedData);  
+        return redirect()->route('dashboard');
+    }
+    public function updateInfoForm()
+    {
+        $user = Auth::user();
+        return view('users.updateInfo', compact('user'));
     }
 }
